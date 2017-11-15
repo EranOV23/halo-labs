@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 import Cocktail from './components/Cocktail';
+import styled from 'styled-components';
 
-const Item = {
-    img: "https://media.monin.com/us/media/catalog/product/_/C/_Classic_Mint_Mojito-1507563995-1.png",
-    title: "Classic Mojito Mint",
-    author: "Eran Ovadia",
-    description: "This is a Classic Mojito Mint with Rum and Mint",
-    tags: ["rum", "mint"],
-};
+import './App.css';
+import CocktailsList from './data/cocktailsList';
+
+
+const HeadertWrapper = styled.section`
+  background-color: palevioletred;
+  height: 150px;
+  padding: 20px;
+  color: white;
+`;
+
+const ContentWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+`;
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <HeadertWrapper>
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="App-intro">
-            <Cocktail item={Item}/>
-        </div>
+          <h1 className="App-title">Welcome to React with Styled-Components & Storybook</h1>
+        </HeadertWrapper>
+        <ContentWrapper>
+            <Cocktail item={CocktailsList[0]}/>
+            <Cocktail recommended item={CocktailsList[1]}/>
+            <Cocktail item={CocktailsList[2]}/>
+        </ContentWrapper>
       </div>
     );
   }

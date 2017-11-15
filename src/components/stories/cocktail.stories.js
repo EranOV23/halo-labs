@@ -7,7 +7,7 @@ const Item = {
     title: "Classic Mojito Mint",
     author: "Eran Ovadia",
     description: "This is a Classic Mojito Mint with Rum and Mint",
-    tags: ["rum", "mint"],
+    tags: ["Rum", "Mint"],
 };
 
 
@@ -17,4 +17,5 @@ storiesOf('Cocktail', module)
             {story()}
         </div>
     ))
-    .add('with some props', () => <Cocktail item={Item}/>);
+    .add('not recommended', () => <Cocktail item={Item}/>)
+    .add('recommended', () => <Cocktail item={Item} recommended={true}/>);
